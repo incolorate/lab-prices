@@ -14,7 +14,6 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -22,7 +21,6 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/harvest', [HarvestController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('harvest');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

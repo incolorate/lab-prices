@@ -20,11 +20,11 @@ class EuclidHarvester extends MainHarvester {
                     const columns = row.querySelectorAll("td");
                     if (columns.length > 0) {
                         data.push({
-                            name: columns[0] ? columns[0].innerText : "",
+                            test: columns[0] ? columns[0].innerText : "",
                             price: columns[1]
                                 ? columns[1].innerText.split(" ")[0]
                                 : "",
-                            unit: columns[2] ? columns[2].innerText : "",
+                            category: columns[2] ? columns[2].innerText : "",
                         });
                     }
                 });

@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import axios from axios
+import axios from "axios";
 
 class MainHarvester {
     constructor() {
@@ -55,11 +55,14 @@ class MainHarvester {
         }
     }
 
-    async sendDataToApi () {
+    async sendDataToApi() {
         try {
-            const response = await axios.post("http://localhost:3000/api/price-list", {
-                data: this.data,
-            });
+            const response = await axios.post(
+                "http://localhost:3000/api/price-list",
+                {
+                    data: this.data,
+                }
+            );
 
             console.log("Data sent to API", response.data);
         } catch (error) {
