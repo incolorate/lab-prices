@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Synonym extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'test_id'];
 
     public function test()
     {

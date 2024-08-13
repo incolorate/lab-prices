@@ -1,6 +1,10 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
+
+const props = defineProps({
+    data: Array,
+});
 </script>
 
 <template>
@@ -16,7 +20,25 @@ import { Head } from "@inertiajs/vue3";
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">You're logged in!</div>
+                    <div class="p-6 text-gray-900">Hello</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Test</th>
+                                <th>Source</th>
+                                <th>Price</th>
+                                <th>Price updated at</th>
+                            </tr>
+                        </thead>
+                        <tbody v-for="test in data">
+                            <tr>
+                                <td>{{ test.test_name }}</td>
+                                <td>{{ test.source }}</td>
+                                <td>{{ test.price }}</td>
+                                <td>{{ test.timestamps }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
